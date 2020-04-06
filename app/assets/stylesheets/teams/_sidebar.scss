@@ -1,0 +1,45 @@
+.side-nav-channel{
+  width: 220px;
+  background-color: #f5f5f5;
+  padding-left: 10px!important;
+  overflow-x: hidden;
+  margin-top: 65px;
+  .team_title{
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .team_icon{
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 0!important;
+    color: #ccc;
+  }
+  .remove_channel, .remove_user{
+    color: #ccc;
+  }
+
+  .channel_title{
+    font-size: 20px;
+    .channel_icon{
+      margin-top: 10px;
+    }
+  }
+  .open_channel, .open_user{
+    color: black;
+    padding-left: 10px!important  ;
+  }
+
+  .list{
+    background-color: #f5f5f5!important;
+    padding-left: 10px;
+  }
+}
+.team_content {
+  padding-left: 220px;
+}
+
+@media only screen and (max-width : 992px) {
+  .team_content {
+    padding-left: 0px;
+  }
+}

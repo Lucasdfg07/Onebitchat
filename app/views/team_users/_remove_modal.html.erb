@@ -1,0 +1,18 @@
+<div id="remove_user_modal" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <%= form_tag("users/0", :method => :delete, class: "col s12 remove_user_form") do %>
+        <div class="row">
+          <div class="col s12">
+            <h4>Remove User</h4>
+            <p>Are you sure you want to remove the user?</p>
+          </div>
+          <div class="input-field col s12">
+            <input type="hidden" name="user_remove_id" id="user_remove_id">
+            <%= submit_tag("Remove", class: "btn red right") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

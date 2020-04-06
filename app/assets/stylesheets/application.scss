@@ -1,2 +1,11 @@
 @import "materialize";
 @import "material_icons";
+@import "shared/_navbar";
+@import "shared/_sidebar";
+@import "teams/_sidebar";
+@import "teams/index";
+@import "teams/show";
+
+.container{
+  width: 90%;
+}
