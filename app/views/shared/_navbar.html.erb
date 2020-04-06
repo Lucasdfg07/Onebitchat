@@ -1,0 +1,30 @@
+<div class="navbar-fixed">
+  <nav class="top-nav">
+    <div class="nav-wrapper col s12">
+      <a href="/" class="brand-logo"><i class="material-icons">chat_bubble_outline</i>OneBitChat</a>
+      <a href="#" data-activates="side-bar" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li><a href="/users/edit">Profile</a></li>
+          <li>
+            <a href="#" class='dropdown-button' data-activates='teams' data-beloworigin="true" alignment='left'>My Teams<i class="material-icons right">arrow_drop_down</i></a>
+            <ul id="teams" class="dropdown-content">
+                <% current_user.my_teams.each do |team| %>
+                  <li><a href="/<%= team.slug %>"><%= team.slug %></a></li>
+                  <li class="divider"></li>
+                <% end %>
+                <li>
+                  <a class="" href="#add_team_modal">+ Add Team</a>
+                </li>
+              </ul>
+          </li>
+          <li>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><a href="/users/sign_in">Login</a></li>
+          <li><a href="/users/sign_up">Sign Up</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>

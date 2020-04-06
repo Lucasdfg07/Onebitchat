@@ -9,6 +9,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- navbar + sidebar -->
+    <header>
+      <%= render "shared/navbar" %>
+      <%= render "shared/sidebar" %>
+    </header>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <!-- logged partials -->
+    <% if current_user %>
+      <%= render "teams/add_modal" %>
+      <% if @team %>
+        <%= render "teams/remove_modal" %>
+        <%= render "team_users/add_modal" %>
+        <%= render "team_users/remove_modal" %>
+        <%= render "channels/add_modal" %>
+        <%= render "channels/remove_modal" %>
+      <% end %>
+    <% end %>
   </body>
 </html>

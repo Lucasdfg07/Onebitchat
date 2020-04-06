@@ -1,0 +1,24 @@
+<ul class="side-nav" id="side-bar">
+  <% if current_user %>
+    <li><a href="/users/edit">Profile</a></li>
+    <li><div class="divider"></div></li>
+    <li>
+      <a href="#" class='dropdown-button' data-activates='teams_side' data-beloworigin="true" alignment='left'>My Teams<i class="material-icons right">arrow_drop_down</i></a>
+      <ul id="teams_side" class="dropdown-content">
+        <% current_user.my_teams.each do |team| %>
+          <li><a href="/<%= team.slug %>"><%= team.slug %></a></li>
+          <li class="divider"></li>
+        <% end %>
+        <li>
+          <a class="" href="#add_team_modal">+ Add Team</a>
+        </li>
+      </ul>
+    </li>
+    <li>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+  <% else %>
+    <li><a href="/users/sign_in">Login</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/users/sign_up">Sign Up</a></li>
+    <li><div class="divider"></div></li>
+  <% end %>
+</ul>

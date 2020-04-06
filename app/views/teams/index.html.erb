@@ -1,0 +1,26 @@
+<div class="center row no_team">
+  <% if current_user.my_teams.present? %>
+    <h5>Your Teams</h5>
+    <div class="row">
+      <ul class="collection col m4 offset-m4 s10 offset-s1">
+        <% current_user.my_teams.each do |t| %>
+          <li class="collection-item dismissable">
+            <div>
+              <%= t.slug %>
+              <a href="/<%= t.slug %>" class="secondary-content">
+                <i class="material-icons">call_made</i>
+              </a>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="row">
+      <a class="btn" href="#add_team_modal">New Team</a>
+    </div>
+  <% else %>
+    <h5>You have not created any teams yet</h5>
+    <h5>Create one now and empower your team!</h5>
+    <a class="btn" href="#add_team_modal">New Team</a>
+  <% end %>
+</div>

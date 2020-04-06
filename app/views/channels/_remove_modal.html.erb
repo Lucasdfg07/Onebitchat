@@ -1,0 +1,18 @@
+<div id="remove_channel_modal" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <%= form_tag("channels/0", :method => :delete, class: "col s12 remove_channel_form") do %>
+        <div class="row">
+          <div class="col s12">
+            <h4>Remove Channel</h4>
+            <p>Are you sure you want to delete the channel?</p>
+          </div>
+          <div class="input-field col s12">
+            <input type="hidden" name="channel_remove_id" id="channel_remove_id">
+            <%= submit_tag("Remove", class: "btn red right") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

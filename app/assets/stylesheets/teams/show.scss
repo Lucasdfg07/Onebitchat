@@ -1,0 +1,38 @@
+.chat{
+  margin-top: 20px;
+  .channel_name_box{
+    margin-bottom: 0px;
+    .channel_name{
+      font-weight: 700;
+    }
+  }
+  .profile_icon{
+    color: #9e9e9e;
+    font-size: 50px;
+  }
+  .date{
+    font-size: 10px;
+    color: #bbb;
+    margin-left: 8px;
+  }
+  .messages{
+    border:1px solid #9e9e9e;
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 10px;
+  }
+  .new_message{
+    height: 28px;
+    min-height: 28px;
+  }
+  @media only screen and (max-width : 992px) {
+    margin-top: 5px;
+    .messages {
+      border:1px solid #9e9e9e;
+      height: 180px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+  }
+}
