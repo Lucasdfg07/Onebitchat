@@ -23,7 +23,7 @@
                      <% @team.channels.each do |channel| %>
                      <li class="channel_<%= channel.id %>">
                         <div>
-                           <a href="#" class="open_channel">
+                           <a href="#" class="open_channel" id="<%= channel.id %>">
                            <span id="<%= channel.id %>">#<%= channel.slug %></span>
                            </a>
                            <% if can? :destroy, channel %>
@@ -62,7 +62,7 @@
                         <li class="user_<%= user.id %>">
                            <div>
                               <a href="#" id="<%= user.id %>" class="open_user">
-                              <span id="<%= user.id %>"><%= user.name %></span>
+                                <span id="<%= user.id %>"><%= user.name %></span>
                               </a>
                               <% if can? :destroy, @team %>
                               <a class="right remove_user" id="<%= user.id %>" href="#" style="color: #ccc">

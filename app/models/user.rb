@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :validatable
 
   def my_teams
     self.teams + self.member_teams
